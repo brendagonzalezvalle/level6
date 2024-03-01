@@ -1,0 +1,123 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+/* Styling for Header component */
+.header--container{
+  background-color: #ddd1d1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  padding: 85px;
+  font-family: emoji;
+  font-weight: 300;
+}
+
+#header--title {
+  font-weight: 300;
+}
+
+#header--button {
+  padding: 12px;
+  font-weight: bold;
+}
+
+/* styling for project component  */
+
+#project--title {
+  font-weight: 300;
+  font-size: 25px;
+  margin-left: -65px;
+  margin-bottom: 55px;
+  margin-top: -50px;
+
+}
+
+#project--image{
+  width: 300px;
+}
+
+/* .project--container {
+    margin: 83px;
+    border-style: groove;
+    padding: 40px;
+  
+} */
+
+.project--main {
+    display: flex;
+    flex-direction: column;
+    width: 329px;
+    margin: 83px;
+    border-style: groove;
+    padding: 40px;
+    font-family: emoji;
+}
+
+#project--name {
+  font-weight: 500;
+  margin-bottom: -3px;
+}
+#project--description {
+  font-style: italic;
+}
+
+#project--tech {
+  font-weight: 200;
+  font-style: italic;
+  margin-top: 0px;
+  font-size: 16px;
+
+}
+
+/* Styling About Component */
+
+.aboutMe {
+    text-align: center;
+    margin-left: 80px;
+    line-height: 32px;
+    margin-right: 80px;
+}
+
+.contact--container{
+    font-family: emoji;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    
+}
+
+.contact--inputs > input{
+    padding: 10px;
+    width: -webkit-fill-available;
+    font-size: large;
+    border-radius: 10px;
+    border-style: solid;
+}
+.contact--inputs{
+  display: flex;
+}
+
+.contact--button{
+  font-size: medium;
+  height: 61px;
+  width: 150px;
+}
+#contact--email{
+  margin-left: 15px;
+}
+
+textarea {
+    width: -webkit-fill-available;
+    margin-top: 15px;
+    border-radius: 10px;
+    border-style: solid;
+    height: 300px;
+}
+
+.about--title{
+  text-align: center;
+  font-family: emoji;
+}
