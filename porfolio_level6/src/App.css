@@ -12,6 +12,9 @@ body {
   padding: 85px;
   font-family: emoji;
   font-weight: 300;
+  border-style: solid;
+  border-width: 10px;
+  border-color: dimgray;
 }
 
 #header--title {
