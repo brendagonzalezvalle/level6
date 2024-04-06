@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import IssueForm from './IssueForm.jsx'
 import IssueList from "./IssueList.jsx"
 import Issue from './Issue.jsx'
@@ -11,16 +11,28 @@ export default function Profile(){
       username
     }, 
     addIssue, 
-    issues
+    issues,
+    getUserIssues,
+    // postNewComment
+    
   }= useContext(UserContext)
+
+  useEffect(()=>{
+    getUserIssues()
+  }, [])
+
+  
   return (
     <div className="profile">
-      <h1>Welcome @{username}</h1>
-      <h3>Add A Todo</h3>
-      <IssueForm addIssue={addIssue} />
-      <h3>Your Todos</h3>
+      <h1 className='profile-welcome'>Welcome {username}!</h1>
+      <h3>Add an Issue</h3>
+      <IssueForm addIssue={addIssue}
+      
+      />
+      <h3>Political Issues:</h3>
       {/* render issue list, pass array of issues from context state*/}
       <IssueList issues={issues}/> 
     </div>
   )
 }
+

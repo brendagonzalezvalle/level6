@@ -67,4 +67,44 @@ issueRouter.put("/:issueId", (req, res, next) => {
   )
 })
 
+//upvote (like) an issue
+issueRouter.put("/upVote/:issueId", (req, res, next) => {
+  Issue.findOneAndUpdate(
+      { _id: req.params.issueId },
+      {
+          $addToSet: { likedUsers: req.auth._id }, // makes it so the same id cant be in array more than once
+          $pull: { dislikedUsers: req.auth._id } // pull will pull the id out of array
+      },
+      { new: true },
+      (err, updatedIssue) => {
+          if (err) {
+              res.status(500)
+              return next(err)
+          }
+          return res.status(201).send(updatedIssue)
+      }
+  )
+})
+
+// downvote (dislike) an issue.
+
+issueRouter.put("/downVote/:issueId", (req, res, next) => {
+  Issue.findOneAndUpdate(
+      { _id: req.params.issueId },
+      {
+          $addToSet: { dislikedUsers: req.auth._id },
+          $pull: { likedUsers: req.auth._id }
+      },
+      { new: true },
+      (err, updatedIssue) => {
+          if (err) {
+              res.status(500)
+              return next(err)
+          }
+          return res.status(201).send(updatedIssue)
+      }
+  )
+})
+
+
 module.exports = issueRouter

@@ -7,7 +7,24 @@
     outline: none;
     text-decoration: none;
   }
-  
+  body {
+    background-color: #4d7ea6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10vh;
+  }
+
+  /* //Navbar styling */
+
+  .navbar-title {
+    color: white;
+  }
+  .navbar-button {
+    background-color: darkgray;
+    color: white;
+    padding: 5px;
+  }
   .app {
     background-color: #eee9;
   }
@@ -41,7 +58,7 @@
     border: 1px solid #3339;
     padding: 20px;
     border-radius: 5px;
-    background-color: #aaa9;
+    background-color: rgba(27, 94, 117, 0.467);
   
     display: flex;
     flex-direction: column;
@@ -51,6 +68,7 @@
     margin: 16px 8px;
     padding: 8px;
     border-radius: 4px;
+    font-style: italic;
   }
   
   .auth-container > form > button {
@@ -58,24 +76,44 @@
     padding: 8px;
     border-radius: 4px;
   }
-  
-  .todo-list {
+  /* style .issue */
+
+  .issue-political-title{
+    border-style: double;
+    margin: 10px;
+
+  }
+
+  .issue-political-description{
+    font-style: italic;
+    color: cadetblue;
+    margin: 10px;
+
+  }
+
+
+
+  .issue-list {
   
   }
   
-  .todo {
+  .issue {
   
   }
   
   .public {
-    height: 100vh;
+    /* height: 100vh; */
   }
-  
+  /* style profile component */
+
+  .profile-welcome{
+    text-transform: uppercase;
+  }
   .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+   
   }
   
   .profile > h1 {
@@ -86,7 +124,7 @@
   
   .profile > h3 {
     margin: 16px 0;
-    text-decoration: underline;
+    color: cadetblue;
   }
   
   .profile > form {
@@ -103,7 +141,75 @@
   .profile > form > button {
     margin: 8px 0;
     padding: 8px;
-    border-radius: 5px
+    border-radius: 5px;
+    
   }
   
-  
+  .issue-title {
+    padding: 20px;
+    font-style: italic;
+    border-style: double;
+    margin: 20px;
+    border-width: medium;
+    background: aliceblue;
+  }
+
+  .issue-form-button{
+    margin: 1vh 7vw;
+    font-size: 2vw;
+    width: 65%;
+    font-family: fantasy;
+    box-shadow: 3px 4px;
+    align-self: center;
+  }
+
+  .description {
+    text-decoration: underline;
+    background-color: aliceblue;
+    font-family: revert-layer;
+    margin: 20px;
+    border-style: groove;
+    border-width: 14px;
+    border-color: antiquewhite;
+    padding: 20px;
+  }
+
+  .commentform-container{
+    display: flex;
+    flex-direction: column;
+    margin: 18px;
+  }
+
+  .commentform-container > input {
+    padding-top: 0px;
+    padding-bottom: 55px;
+    padding-left: 8px;
+  }
+
+  .commentform-container > button {
+    margin-top: 10px;
+  }
+
+  .issue-like-unlike-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 25px;
+  }
+
+  .issue-like-unlike-container > button {
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 2px;
+    border-radius: 5px;
+    border-style: revert;
+  }
+
+  .issue-like-unlike-container > p {
+    font-weight: bolder;
+  }
+
+  .comment-text{
+    line-height: 23px;
+    font-weight: lighter;
+    margin-top: 3px;
+  }

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Auth from './components/Auth.jsx'
@@ -6,9 +6,13 @@ import Profile from './components/Profile.jsx'
 import Public from './components/Public.jsx'
 import { UserContext } from './context/UserProvider.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
+import axios from 'axios'
 
 
 export default function App(){
+  
+ 
+
   const {token, logout}= useContext(UserContext)
   return (
     <div className='app'>
