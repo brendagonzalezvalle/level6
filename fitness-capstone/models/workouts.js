@@ -6,11 +6,18 @@ const workoutSchema = new Schema ({
     date: {
         type: String,
         required: true
+    },
+
+    name: {
+        type: String,
+        required: true
+    }, //new name
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User', // Reference to the user who posted the comment
+        required: true
     }
-    // workoutComplete: {
-    //     type: Boolean,
-    //     required: true
-    // }
+
 
 })
 

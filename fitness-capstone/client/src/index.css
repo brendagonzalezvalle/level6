@@ -53,6 +53,27 @@ body {
     margin-right: 10px;
 }
 
+.navbar-title {
+    color: white;
+  }
+  .navbar-button {
+    background-color: darkgray;
+    color: white;
+    padding: 5px;
+  }
+  .app {
+    background-color: #eee9;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    background-color: #3339;
+  }
+  
+
 
 /* Style Home! */
 
@@ -152,3 +173,46 @@ body {
     height: 200px;
     justify-self: center;
  }
+
+
+ /* //Style auth component */
+
+ .auth-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .auth-container > h1 {
+    font-size: 2em;
+    margin: 24px;
+  }
+  
+  .auth-container > p {
+    margin: 16px;
+    text-decoration: underline;
+  }
+  
+  .auth-container > form {
+    border: 1px solid #3339;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(27, 94, 117, 0.467);
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-container > form > input {
+    margin: 16px 8px;
+    padding: 8px;
+    border-radius: 4px;
+    font-style: italic;
+  }
+  
+  .auth-container > form > button {
+    margin: 16px 8px;
+    padding: 8px;
+    border-radius: 4px;
+  }

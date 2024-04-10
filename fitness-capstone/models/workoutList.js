@@ -10,8 +10,8 @@ const workoutList = new Schema({
     instructions: {
         type: String,
         required: true
-    }
-
+    },
+    
 })
 
 

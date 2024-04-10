@@ -18,18 +18,24 @@ mongoose.connect("mongodb+srv://brendagonzalez22valle:X9zjhWLADk9osiwS@cluster0.
 
 //Routes
 
+app.use("/auth", require("./routes/authRouter.js"))
+app.use('/api', jwt({ secret: process.env.SECRET, algorithms: ['HS256'] })) // req.auth
 app.use("/api/workouts", require("./routes/workoutRouter.js"))
-app.use("/api/list", require("./routes/workoutListRouter.js"))
+app.use("/list", require("./routes/workoutListRouter.js"))
+
 
 
 //Error Handler
 
 app.use((err, req, res, next) => {
     console.log(err)
+    if(err.name === "UnauthorizedError"){
+      res.status(err.status)
+    }
     return res.send({errMsg: err.message})
-})
+  })
 //Listen
 
-app.listen("8000", () => {
-    console.log("The server at port 8000 is running!")
+app.listen("9000", () => {
+    console.log("The server at port 9000 is running!")
 })
