@@ -2,6 +2,8 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
 
+//bcrypt encrypts/decrypts our user's password
+
 
 const userSchema = new Schema({
     username: {

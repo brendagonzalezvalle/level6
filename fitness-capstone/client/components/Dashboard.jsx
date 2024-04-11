@@ -1,20 +1,19 @@
 import {React, useState, useContext }from "react";
-import Home from '../components/Home'
 import { UserContext } from '../src/context/UserProvider.jsx'
 
 
 export default function Dashboard(props){
 
-    const {user: {username}, postWorkout, workouts} = useContext(UserContext)
+    const {workouts} = useContext(UserContext)
 
     
     const array = workouts.map(item => {
         return (<h1>{item}</h1>)
     })
-    // console.log(array)
-
+    
     const total = array.length //grab total
-    console.log(total)
+   
+
 
 
 
@@ -26,11 +25,7 @@ export default function Dashboard(props){
 
             <h3 className="dashboard-dates-title">Dates of Completed Workouts: </h3>
             {workouts.map(workout => <div className="dashboard-dates" key={workout._id}>{workout.date}</div>)}
-            
-            
-           
-           
-            
+        
         </div>
     )
 }

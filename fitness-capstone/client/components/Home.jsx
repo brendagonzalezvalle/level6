@@ -1,9 +1,6 @@
 import React, {useContext, useState} from "react";
-// import Dashboard from "./Dashboard.jsx";
-import { set } from "mongoose";
 import { UserContext } from '../src/context/UserProvider.jsx'
 import WorkoutsCompleted from "./WorkoutsCompleted.jsx";
-import Community from "./Community.jsx";
 
 export default function Home (props){
 
@@ -15,11 +12,11 @@ export default function Home (props){
         name: "" //new
     } 
 
-    const {user: {username}, postWorkout, workouts} = useContext(UserContext)
+    const {user: {username}, postWorkout, workouts, getAllWorkouts, getUserWorkouts} = useContext(UserContext)
 
     const [formData, setFormData] = useState(initialData) //set form data state
-    const [completedWorkouts, setCompletedWorkouts] = useState(0) // set completed workout state
     console.log(formData)
+
 
 
     function handleChange(e){
@@ -34,8 +31,6 @@ export default function Home (props){
     function handleSubmit(e){
         e.preventDefault()
         postWorkout(formData) //pass in formData (new workout object) to post function
-        // console.log(alert("Awesome Job! You are working hard keep working towards your goals!"))
-        setCompletedWorkouts(completedWorkouts + 1)
         setFormData(initialData)
 
     }
@@ -45,10 +40,11 @@ export default function Home (props){
 
     return (
         <div >
-            <h1>Welcome {username}</h1>
-            <p>Move.Lift.Repeat</p>
+            <h1 className="home-welcome">Welcome {username}</h1>
+            <p className="home--logo">Move.Lift.Repeat.</p>
 
             <h1 className="home-title"> Fitness Tracker</h1>
+{/* form */}
             <form className="home--container" onSubmit={handleSubmit}>
                 <input 
                 className="home-date-input"
@@ -57,7 +53,7 @@ export default function Home (props){
                 onChange={handleChange}
                 value={formData.date}
                  />
-                 {/* new */}
+                 
                 <input 
                 className="home-date-input"
                 type="text" 
@@ -69,9 +65,12 @@ export default function Home (props){
 
                 <button className="home-submit">Mark Workout Complete</button>
 
-                <h3 className="home-completed-workouts"> You have submited the following workout(s) today:    {completedWorkouts} </h3>
-                <h1>My Workout History: </h1>
-                <WorkoutsCompleted workouts={workouts}/>
+                <div className="home-history-container">
+                    <h1 className="home-history">My Workout History: </h1>
+                    <WorkoutsCompleted workouts={workouts}/>
+
+                </div>
+
                
 
             </form>

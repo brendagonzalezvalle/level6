@@ -19,7 +19,7 @@ mongoose.connect("mongodb+srv://brendagonzalez22valle:X9zjhWLADk9osiwS@cluster0.
 //Routes
 
 app.use("/auth", require("./routes/authRouter.js"))
-app.use('/api', jwt({ secret: process.env.SECRET, algorithms: ['HS256'] })) // req.auth
+app.use('/api', jwt({ secret: process.env.SECRET, algorithms: ['HS256'] })) // expressjwt gives us acces to req.auth & accept the token, and helps protect routes that should be inaccessible without a token
 app.use("/api/workouts", require("./routes/workoutRouter.js"))
 app.use("/list", require("./routes/workoutListRouter.js"))
 

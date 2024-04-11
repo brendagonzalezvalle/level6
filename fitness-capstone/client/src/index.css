@@ -90,6 +90,14 @@ body {
 
 }
 
+.home-welcome{
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  margin-left: 10px;
+  margin-top: 45px;
+  color: cadetblue;
+}
+
 .home-submit{
     background-color: cadetblue;
     padding: 15px;
@@ -118,9 +126,25 @@ body {
  .home-title {
     text-align: center;
     font-style: italic;
-    font-size: 40px;
+    font-size: 30px;
+    margin-top: 90px;
  }
 
+ .home-history{
+  text-align: center;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: 75px;
+ }
+
+ .home-history-container {
+  border-style: inset;
+  margin-top: 80px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 80px;
+  width: -webkit-fill-available;
+ }
  /* styling dashboard */
 
  .dashboard-container {
@@ -152,8 +176,8 @@ body {
     font-size: 15px;
     grid-column: 1;
     line-height: 40px;
-    text-decoration: underline;
     text-decoration-style: wavy;
+    
     
  }
 
@@ -198,8 +222,7 @@ body {
     border: 1px solid #3339;
     padding: 20px;
     border-radius: 5px;
-    background-color: rgba(27, 94, 117, 0.467);
-  
+    background-color: cadetblue;
     display: flex;
     flex-direction: column;
   }
@@ -216,3 +239,50 @@ body {
     padding: 8px;
     border-radius: 4px;
   }
+
+.workout-text{
+  
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 500;
+  padding: 19px;
+  border-style: inset;
+  border-radius: 17px;
+}
+
+.workout-dates {
+  
+    font-family: monospace;
+    font-size: 15px;
+    grid-column: 1;
+    line-height: 40px;
+    text-decoration-style: wavy;
+    margin: 45px;
+    
+    
+ 
+}
+
+.home--logo{
+  font-style: italic;
+  letter-spacing: 10px;
+  margin-left: 10px;
+}
+
+
+@media screen and (min-width: 700px) {
+  .home-welcome{
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    margin-left: 80px;
+    margin-top: 45px;
+    color: cadetblue;
+  }
+  .home--logo{
+    font-style: italic;
+    letter-spacing: 10px;
+    margin-left: 80px;
+  }
+  
+}

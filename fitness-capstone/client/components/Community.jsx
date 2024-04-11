@@ -19,7 +19,7 @@ const{ _id, name} = props
 
 //display workouts
   const displayWorkouts = allWorkouts.map((workout)=>{
-    return <li className='workout-text' key={workout._id}> {workout.name} completed a workout on {workout.date} </li> 
+    return <h1 className='workout-text' key={workout._id}> {workout.name} completed a workout on {workout.date} </h1> 
   
    })
 
@@ -27,15 +27,12 @@ const{ _id, name} = props
 
 
   return (
-    <div className="community">
-      <h1>Community Activity</h1>
+    <div className="workoutlist-container">
+      <h1 className="workoutlist-title ">Community Activity</h1>
       <div>
-
-        <ul>
+        
           {displayWorkouts}
           
-        </ul>
-
       </div>
 
      

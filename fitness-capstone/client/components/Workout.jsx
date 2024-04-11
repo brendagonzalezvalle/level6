@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 
 
@@ -9,8 +9,8 @@ export default function Workout(props){
 
     return(
         <div>
-            <h3> {name} {date}</h3> 
-            {/* name is new */}
+            <h3 className="workout-dates"> {name} {date}</h3> 
+            
         </div>
     )
 }

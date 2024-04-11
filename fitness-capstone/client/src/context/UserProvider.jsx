@@ -2,12 +2,14 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 // import { config } from "dotenv";
 
+
+//Create context
 export const UserContext = React.createContext()
 
+//Axios Interceptor to add authorization header for every request that uses userAxios, lets us
+// get past jwt on the backend
 const userAxios = axios.create()
 
-//axios interceptor to add authorization header for every request that uses userAxios, lets us
-// get past jwt on the backend
 userAxios.interceptors.request.use(config => {
     const token = localStorage.getItem("token")
     config.headers.Authorization = `Bearer ${token}`
@@ -24,12 +26,10 @@ export default function UserProvider(props){
         errMsg: ""
     }
 
-    // const intialWorkoutState = {
-
-    // }
 
     const [userState, setUserState]= useState(initialState)
-    const [allWorkouts, setAllWorkouts] = useState([]) //
+    const [allWorkouts, setAllWorkouts] = useState([]) 
+    const [workoutList, setWorkoutList] = useState([]) 
     console.log(allWorkouts)
 
 
@@ -129,8 +129,8 @@ export default function UserProvider(props){
 
 // Get all workoutlists
 function getWorkoutList(){
-  userAxios.get("/") //
-  .then(res => console.log(" get WorkoutList function"))
+  userAxios.get("/list") //
+  .then(res => setWorkoutList(res.data))
   .catch(err => console.log(err.response.data.errMsg))// errMsg set up in server
 }
 
@@ -143,8 +143,7 @@ function getAllWorkouts(){
 useEffect(() => {
   getWorkoutList()
   getAllWorkouts()
-  
-},[] ) // this will only fire once since the dependency is an empty array
+  },[] ) // this will only fire once since the dependency is an empty array
 
 
 
@@ -160,7 +159,8 @@ useEffect(() => {
             resetAuthErr,
             getWorkoutList,
             getAllWorkouts,
-            allWorkouts
+            allWorkouts,
+            workoutList
             
         }}>
             {props.children}
